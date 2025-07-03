@@ -1,0 +1,145 @@
+nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    position: fixed;
+    top: 35px;
+    bottom: 0;
+    left: 0;
+    width: 72px;
+    z-index: 1;
+
+    background-color: var(--background-dark);
+}
+
+.group-chat-icon-container,
+.action-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+}
+
+.group-chat-icon-container img {
+    width: 40px;
+    border-radius: 10px;
+}
+
+.home-icon-container {
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--line-dimmed);
+}
+
+.home-icon-container:active {
+    padding-bottom: 4px;
+    padding-top: 1px;
+}
+
+.action-container svg {
+    padding: 8px;
+    width: 24px;
+    height: 24px;
+    border-radius: 10px;
+    background-color: var(--background-normal);
+    transition: background-color 0.1s;
+}
+
+.action-container:hover svg {
+    background-color: var(--blue);
+}
+
+.group-chat-icon-container .tooltip-container::before {
+    content: '';
+    background-color: white;
+    width: 8px;
+    height: 20px;
+    border-radius: 4px;
+
+    position: absolute;
+    left: -20px;
+    top: 8px;
+
+    opacity: 0;
+    transition: opacity 0.15s;
+    pointer-events: none;
+}
+
+.group-chat-icon-container .tooltip-container:hover::before {
+    opacity: 1;
+}
+
+.group-chat-icon-container:hover img,
+.action-container:hover svg {
+    cursor: pointer;
+}
+
+.has-notifications .tooltip-container::before {
+    content: '';
+    background-color: white;
+    width: 8px;
+    height: 8px;
+    border-radius: 4px;
+
+    position: absolute;
+    left: -20px;
+    top: 12px;
+    opacity: 1;
+
+    transition: height 0.2s, top 0.2s;
+}
+
+.has-notifications .tooltip-container:hover::before {
+    height: 20px;
+    top: 8px;
+}
+
+.selected svg {
+    background-color: var(--blue);
+}
+
+.selected {
+    position: relative;
+}
+
+.selected::before {
+    content: '';
+    background-color: white;
+    width: 8px;
+    height: 40px;
+    border-radius: 4px;
+
+    position: absolute;
+    left: -4px;
+    top: -2px;
+
+    opacity: 1;
+}
+
+nav .tooltip-container {
+    position: relative;
+}
+
+nav .tooltip {
+    background-color: var(--background-normal);
+    color: white;
+    font-size: 15px;
+    font-weight: 450;
+    padding: 8px 12px;
+    border: 2px solid var(--background-highlighted);
+    border-radius: 5px;
+
+    position: absolute;
+    top: 0;
+    left: 48px;
+    white-space: nowrap;
+
+    opacity: 0;
+    transition: opacity 0.15s;
+    pointer-events: none;
+}
+
+.tooltip-container:hover .tooltip {
+    opacity: 1;
+}

@@ -1,0 +1,88 @@
+header {
+    background-color: var(--background-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 35px;
+    z-index: 1;
+}
+
+.title-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+header svg {
+    fill: var(--interactive-normal);
+    transition: fill 0.15s;
+}
+
+.header-icons-container svg:hover {
+    fill: var(--interactive-highlighted);
+    cursor: pointer;
+}
+
+.header-title {
+    color: white;
+}
+
+.header-icons-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    position: absolute;
+    right: 0;
+    width: 100px;
+}
+
+.inbox-icon-container {
+    position: relative;
+}
+
+.red-circle {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--red);
+    border: 2px solid var(--background-dark);
+
+    position: absolute;
+    bottom: 2px;
+    right: -2px;
+}
+
+header .tooltip {
+    background-color: var(--background-normal);
+    color: white;
+    font-size: 13px;
+    font-weight: 450;
+    padding: 7px 9px;
+    border: 2px solid var(--background-highlighted);
+    border-radius: 5px;
+
+    position: absolute;
+    bottom: -45px;
+    right: -17px;
+
+    opacity: 0;
+    transition: opacity 0.15s;
+    pointer-events: none;
+}
+
+.help-icon-container .tooltip {
+    bottom: -42px;
+    right: 18px;
+}
+
+.inbox-icon-container:hover .tooltip,
+.help-icon-container:hover .tooltip {
+    opacity: 1;
+}

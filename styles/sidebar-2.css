@@ -1,0 +1,266 @@
+aside {
+    width: 350px;
+    border-top: 1px solid var(--line-dark);
+    border-left: 1px solid var(--line-dark);
+    border-top-left-radius: 10px;
+
+    position: fixed;
+    top: 35px;
+    left: 72px;
+    bottom: 0;
+
+    background-color: var(--background-dark);
+}
+
+.conversation-container {
+    height: 47px;
+    border-bottom: 1px solid var(--line-dark);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conversation-button {
+    background-color: var(--button-highlighted);
+    color: white;
+    border: none;
+
+    width: 330px;
+    height: 33px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+.conversation-button:hover {
+    background-color: var(--background-highlighted);
+}
+
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding: 10px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--line-dark);
+}
+
+.dashboard .container {
+    display: flex;
+    align-items: center;
+    height: 32px;
+    border-radius: 10px;
+    padding: 3px 8px;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+.friends-container {
+    background-color: var(--button-highlighted);
+}
+
+.container:hover {
+    background-color: var(--button-glow);
+}
+
+.container:hover .dashboard-text {
+    color: white;
+}
+
+.dashboard-text {
+    color: var(--interactive-normal);
+    font-size: 15px;
+    margin-left: 12px;
+
+    transition: color 0.15s;
+}
+
+.friends-container .dashboard-text {
+    color: white;
+}
+
+.direct-messages {
+    color: var(--text-dark);
+    padding: 10px 16px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.direct-messages-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.direct-messages-header:hover .direct-messages-title {
+    color: white;
+}
+
+.direct-messages-header svg {
+    height: 17px;
+    cursor: pointer;
+}
+
+aside .tooltip-container {
+    position: relative;
+}
+
+aside .tooltip {
+    background-color: var(--background-normal);
+    color: white;
+    font-size: 13px;
+    font-weight: 450;
+    padding: 9px 12px;
+    border: 2px solid var(--background-highlighted);
+    border-radius: 8px;
+
+    position: absolute;
+    top: -40px;
+    left: -30px;
+    white-space: nowrap;
+
+    opacity: 0;
+    transition: opacity 0.15s;
+    pointer-events: none;
+}
+
+.direct-messages-container {
+    border-radius: 8px;
+    padding: 6px 8px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.direct-messages-container:hover {
+    background-color: var(--button-glow);
+}
+
+.single-image-container img {
+    width: 30px;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+
+.offline {
+    position: relative;
+}
+
+.offline::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--interactive-dimmed);
+    border: 3px solid var(--background-dark);
+
+    position: absolute;
+    bottom: -3px;
+    right: -3px;
+}
+
+.offline::after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--background-dark);
+
+    position: absolute;
+    bottom: 2.5px;
+    right: 2.5px;
+}
+
+.online {
+    position: relative;
+}
+
+.online::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--green);
+    border: 3px solid var(--background-dark);
+
+    position: absolute;
+    bottom: -3px;
+    right: -3px;
+}
+
+.direct-messages-container:hover .offline::before,
+.direct-messages-container:hover .online::before,
+.direct-messages-container:hover .second-image {
+    border-color: var(--button-glow);
+}
+
+.direct-messages-container:hover .offline::after {
+    background-color: var(--button-glow);
+}
+
+.double-image-container {
+    position: relative;
+    width: 30px;
+    height: 30px;
+}
+
+.double-image-container .first-image {
+    width: 20px;
+    border-radius: 50%;
+
+    position: absolute;
+    top: -2px;
+    left: -2px;
+}
+
+.double-image-container .second-image {
+    width: 20px;
+    border-radius: 50%;
+
+    position: absolute;
+    bottom: -2px;
+    right: -2px;
+
+    border: 3px solid var(--background-dark);
+}
+
+.direct-messages-container:hover .direct-messages-text {
+    color: white;
+}
+
+.direct-messages-name {
+    font-size: 15px;
+}
+
+.direct-messages-description {
+    font-size: 11px;
+}
+
+.close-button-container {
+    flex: 1;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.close-button {
+    height: 16px;
+    display: none;
+}
+
+.close-button:hover path {
+    fill: white;
+}
+
+.direct-messages-container:hover .close-button {
+    display: block;
+}

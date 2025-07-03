@@ -1,0 +1,136 @@
+.profile-bar {
+    background-color: var(--background-dimmed);
+    border-radius: 8px;
+    padding: 0 8px;
+
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    width: 388px;
+    height: 57px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    z-index: 1;
+}
+
+.profile-info {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+
+    position: relative;
+}
+
+.profile-info:hover {
+    background-color: var(--background-glow);
+}
+
+.profile-info img {
+    height: 40px;
+    border-radius: 50%;
+    vertical-align: center;
+}
+
+.profile-info::before {
+    content: '';
+    background-color: var(--green);
+    width: 12px;
+    height: 12px;
+    border: 5px solid var(--background-dimmed);
+    border-radius: 50%;
+    
+    position: absolute;
+    top: 21px;
+    left: 21px;
+}
+
+.profile-info:hover::before {
+    border-color: var(--background-glow);
+}
+
+.profile-name {
+    color: white;
+    font-size: 14px;
+}
+
+.profile-status {
+    color: var(--text-dark);
+    font-size: 12px;
+}
+
+.profile-bar .buttons {
+    display: flex;
+    gap: 4px;
+}
+
+.unmute-button {
+    background-color: rgba(88, 101, 242, 0.15);
+    border: none;
+    height: 34px;
+    width: 34px;
+    border-radius: 8px;
+}
+
+.unmute-button:hover {
+    background-color: rgba(88, 101, 242, 0.3);
+}
+
+.deafen-button,
+.settings-button {
+    background-color: var(--background-dimmed);
+    border: none;
+    height: 34px;
+    width: 34px;
+    border-radius: 8px;
+}
+
+.deafen-button svg path,
+.settings-button svg path {
+    fill: var(--interactive-normal);
+}
+
+.deafen-button:hover,
+.settings-button:hover {
+    background-color: var(--background-glow);
+}
+
+.deafen-button:hover svg path,
+.settings-button:hover svg path{
+    fill: white;
+}
+
+.profile-bar .tooltip-container {
+    position: relative;
+}
+
+.profile-bar .tooltip {
+    background-color: var(--background-normal);
+    color: white;
+    font-size: 13px;
+    font-weight: 450;
+    padding: 9px 12px;
+    border: 2px solid var(--background-highlighted);
+    border-radius: 8px;
+
+    position: absolute;
+    top: -45px;
+    left: -20px;
+    white-space: nowrap;
+
+    opacity: 0;
+    transition: opacity 0.15s;
+    pointer-events: none;
+}
+
+.settings-button .tooltip {
+    left: -35px;
+}
