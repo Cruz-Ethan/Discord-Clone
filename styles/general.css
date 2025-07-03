@@ -15,6 +15,7 @@
     --line-dark: rgb(48, 48, 48);
 
     --button-glow: hsl(240, 3%, 11%);
+    --button-light: hsl(240, 3%, 15%);
     --button-highlighted: hsl(240, 5%, 14%); 
 
     --background-highlighted: hsl(240, 4%, 26%);
@@ -27,6 +28,11 @@
     --red: rgb(225, 11, 11);
     --green: hsl(120, 56%, 38%);
     --blue: hsl(240, 72%, 62%);
+    --blue-dimmed: hsl(240, 60%, 57%);
+
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 body {
@@ -41,4 +47,163 @@ body {
 main {
     background-color: var(--background-light);
     height: calc(100% - 35px);
+}
+
+.buttons-header {
+    height: 47px;
+    border-top: 1px solid var(--line-dark);
+    border-bottom: 1px solid var(--line-dark);
+    padding: 0 30px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.buttons-header .buttons-container {
+    display: flex;
+    align-items: center;
+}
+
+.buttons-header .buttons-container svg {
+    height: 24px;
+    margin-right: 8px;
+}
+
+.buttons-header .buttons-container svg path {
+    fill: var(--interactive-dimmed);
+}
+
+.viewing-section-title {
+    color: white;
+    font-size: 15px;
+}
+
+.gray-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: var(--background-glow);
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.online-friends-button,
+.all-friends-button {
+    background-color: var(--background-light);
+    color: var(--text-dimmed);
+    font-size: 15px;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    margin-right: 15px;
+    transition: all 0.15s;
+}
+
+.online-friends-button:hover,
+.all-friends-button:hover,
+.buttons-container .selected:hover {
+    background-color: var(--background-glow);
+    color: white;
+}
+
+.buttons-container .selected {
+    background-color: var(--button-light);
+    color: white;
+}
+
+.add-friends-button {
+    background-color: var(--blue);
+    color: var(--text-dimmed);
+    color: white;
+    font-size: 15px;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.15s;
+}
+
+.add-friends-button:hover {
+    background-color: var(--blue-dimmed);
+}
+
+.new-group-dm-button {
+    height: 20px;
+}
+
+.new-group-dm-button:hover path {
+    fill: var(--interactive-highlighted);
+}
+
+.tooltip-container {
+    position: relative;
+}
+
+.buttons-header .tooltip {
+    background-color: var(--background-normal);
+    color: white;
+    font-size: 13px;
+    font-weight: 450;
+    padding: 7px 9px;
+    border: 2px solid var(--background-highlighted);
+    border-radius: 5px;
+
+    position: absolute;
+    bottom: -40px;
+    right: -10px;
+
+    opacity: 0;
+    transition: opacity 0.15s;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.current-online-friends {
+    display: flex;
+    height: 100%;
+}
+
+.online-friends-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.no-friends-online-message {
+    color: var(--text-dimmed);
+    font-size: 14px;
+}
+
+.active-now {
+    background-color: hsl(240, 8%, 13%);
+    color: white;
+    text-align: center;
+
+    width: 360px;
+    padding: 15px 15px;
+    font-weight: bold;
+    font-size: 13px;
+    border-left: 1px solid var(--line-dark);
+}
+
+.active-now p {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+}
+
+.active-now .title {
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.active-now .subheading {
+    font-size: 16px;
+}
+
+.active-now .description {
+    color: var(--text-dimmed);
+    font-weight: normal;
 }

@@ -95,15 +95,15 @@ nav {
     top: 8px;
 }
 
-.selected svg {
+nav .selected svg {
     background-color: var(--blue);
 }
 
-.selected {
+nav .selected {
     position: relative;
 }
 
-.selected::before {
+nav .selected::before {
     content: '';
     background-color: white;
     width: 8px;

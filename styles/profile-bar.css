@@ -57,6 +57,10 @@
     border-color: var(--background-glow);
 }
 
+.profile-info-text {
+    position: relative;
+}
+
 .profile-name {
     color: white;
     font-size: 14px;
@@ -65,6 +69,29 @@
 .profile-status {
     color: var(--text-dark);
     font-size: 12px;
+    transition: all 0.15s;
+}
+
+.profile-username {
+    content: 'angyelo';
+    color: var(--text-dark);
+    font-size: 12px;
+    transition: all 0.15s;
+
+    position: absolute;
+    left: 0;
+    top: 100%;
+    opacity: 0;
+}
+
+.profile-bar:hover .profile-status {
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+.profile-bar:hover .profile-username {
+    transform: translateY(-100%);
+    opacity: 1;
 }
 
 .profile-bar .buttons {
