@@ -83,6 +83,24 @@ aside {
     color: white;
 }
 
+.shop-container {
+    position: relative;
+}
+
+.shop-container::after {
+    content: 'NEW';
+    background-color: var(--red);
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 1px 7px;
+    border-radius: 30px;
+
+    position: absolute;
+    right: 10px;
+    bottom: 12px;
+}
+
 .direct-messages {
     color: var(--text-dark);
     padding: 10px 16px;
@@ -155,8 +173,7 @@ aside .tooltip {
     position: relative;
 }
 
-.offline::before {
-    content: '';
+.gray-circle {
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -168,7 +185,30 @@ aside .tooltip {
     right: -3px;
 }
 
-.offline::after {
+.offline .tooltip-container {
+    position: relative;
+}
+
+.offline .tooltip {
+    background-color: var(--background-normal);
+    color: white;
+    font-size: 13px;
+    font-weight: 450;
+    padding: 9px 12px;
+    border: 2px solid var(--background-highlighted);
+    border-radius: 8px;
+
+    position: absolute;
+    top: -55px;
+    left: -10px;
+    white-space: nowrap;
+
+    opacity: 0;
+    transition: opacity 0.15s;
+    pointer-events: none;
+}
+
+.gray-circle::after {
     content: '';
     width: 5px;
     height: 5px;

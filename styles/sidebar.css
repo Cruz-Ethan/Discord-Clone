@@ -95,6 +95,25 @@ nav {
     top: 8px;
 }
 
+.has-notifications {
+    position: relative;
+}
+
+.has-notifications .notifications {
+    background-color: var(--red);
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+
+    padding: 1px 4px;
+    border: 3px solid var(--background-dark);
+    border-radius: 14px;
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
 nav .selected svg {
     background-color: var(--blue);
 }
